@@ -1,3 +1,4 @@
+package RPGProject;
 public class Player{
     
     private String name;

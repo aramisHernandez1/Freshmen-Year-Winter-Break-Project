@@ -1,3 +1,4 @@
+package LearningTutorials;
 import java.util.Scanner;
 
 public class FirstFile {
