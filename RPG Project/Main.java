@@ -9,7 +9,7 @@ public class Main {
         GameStart(gameInput);
         System.out.println("Game started!");
 
-        Player player1 = CharacterCreation();
+        //Player player1 = CharacterCreation();
     }
 
 
@@ -23,6 +23,7 @@ public class Main {
 
     }
 
+    /*
     private static Player CharacterCreation(){
         System.out.println("Welcome to the Character Creation.");
         System.out.print("Please Enter Your Character Name: ");
@@ -33,7 +34,7 @@ public class Main {
 
         return character;
     }
-
+    */
 
     
 }
