@@ -2,42 +2,18 @@ package RPGProject;
 import java.util.Scanner;
 
 public class Main {
-    //Main game input    
-    private static Scanner gameInput = new Scanner(System.in);
-
 
     public static void main(String[] args){
         GameHandler handler = new GameHandler();
-        System.out.println(handler.StartGame());
+        handler.StartGame(true);
 
+        Player player = new Player(null);
+
+        if(handler.getPlayMode() == GameModes.PLAY){
+            player = handler.CharacterCreation();
+        }
+
+        player.GainXP(100d);
+        System.out.println("Your character is Power " + player.GetCurrentPower());
     }
-
-
-
-
-
-    /*
-    //Game start method
-    private static void GameStart(Scanner input){
-    System.out.println("Welcome to My Game" + "\n----------------------------------");
-    System.out.print("Please enter to start: ");
-
-
-    input.nextLine();
-
-    }
-
-    private static Player CharacterCreation(){
-        System.out.println("Welcome to the Character Creation.");
-        System.out.print("Please Enter Your Character Name: ");
-
-        String player_name = gameInput.nextLine();
-
-        Player character = new Player(player_name);
-
-        return character;
-    }
-    */
-
-    
 }
