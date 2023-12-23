@@ -7,13 +7,16 @@ public class Main {
 
 
     public static void main(String[] args){
-        GameStart(gameInput);
-        System.out.println("Game started!");
+        GameHandler handler = new GameHandler();
+        System.out.println(handler.StartGame());
 
-        Player player1 = CharacterCreation();
     }
 
 
+
+
+
+    /*
     //Game start method
     private static void GameStart(Scanner input){
     System.out.println("Welcome to My Game" + "\n----------------------------------");
@@ -34,7 +37,7 @@ public class Main {
 
         return character;
     }
-
+    */
 
     
 }
