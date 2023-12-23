@@ -41,11 +41,16 @@ public class Arrays2DExample {
         System.out.println(Arrays.deepToString(cars));//Arrays method that will print whole array
 
 
+        //Another way to declare array and print
+
+        String[][] people = {{"Josh", "Aj", "Dan"}, {"Joe", "Aramis", "Dave"}, {"Jean", "Amy", "Darren"}};
+
+
         //Print in rows and colums
-        for(int i = 0; i < 3; i++){
+        for(int i = 0; i < people.length; i++){
             System.out.println();
-            for(int j = 0; j < 3; j++){
-                System.out.print(' ' + cars[i][j]);
+            for(int j = 0; j < people.length; j++){
+                System.out.print(' ' + people[i][j]);
             }
         }
     }
