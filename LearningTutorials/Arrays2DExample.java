@@ -43,7 +43,11 @@ public class Arrays2DExample {
 
         //Another way to declare array and print
 
-        String[][] people = {{"Josh", "Aj", "Dan"}, {"Joe", "Aramis", "Dave"}, {"Jean", "Amy", "Darren"}};
+        String[][] people = {
+                            {"Josh", "Aj", "Dan"}, 
+                            {"Joe", "Aramis", "Dave"}, 
+                            {"Jean", "Amy", "Darren"}
+                            };
 
 
         //Print in rows and colums
