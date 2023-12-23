@@ -1,4 +1,4 @@
-package LearningTutorials;
+package LearningTutorials.BasicJavaTutorials;
 
 public class ForLoop {
     public static void main(String[] args) {

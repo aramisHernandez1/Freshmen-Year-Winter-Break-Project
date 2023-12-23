@@ -1,4 +1,4 @@
-package LearningTutorials;
+package LearningTutorials.BasicJavaTutorials;
 
 import java.util.Scanner;
 

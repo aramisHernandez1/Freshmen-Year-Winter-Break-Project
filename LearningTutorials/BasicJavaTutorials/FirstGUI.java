@@ -1,4 +1,4 @@
-package LearningTutorials;
+package LearningTutorials.BasicJavaTutorials;
 
 //First ever GUI in java.
 
