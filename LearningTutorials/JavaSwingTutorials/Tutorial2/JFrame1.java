@@ -8,7 +8,7 @@ public class JFrame1 extends JFrame {
         initialize();
     }
 
-    public void initialize(){
+    private void initialize(){
         setTitle("JFrame1");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(500, 400);

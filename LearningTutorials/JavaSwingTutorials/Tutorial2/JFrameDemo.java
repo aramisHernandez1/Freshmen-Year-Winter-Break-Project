@@ -13,8 +13,10 @@ public class JFrameDemo {
         //Run this program on the Event Dispatch Thread (EDT)
         SwingUtilities.invokeLater(new Runnable() {
             
-            
+            //2 is better because we dont have access to all internal to JFrame class.
+            //2 is easily the best practice method less exposed = better.
             public void run(){
+                JFrame1 frame1 = new JFrame1();
                 JFrameTwo frameTwo = new JFrameTwo();
             }
         });

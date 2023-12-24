@@ -11,7 +11,7 @@ public class JFrameTwo {
         initialize();
     }
 
-    public void initialize(){
+    private void initialize(){
         frame = new JFrame();
         this.frame.setTitle("JFrameTwo");
         this.frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
