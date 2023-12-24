@@ -2,6 +2,8 @@ package LearningTutorials.JavaSwingTutorials.Tutorial3;
 
 import javax.swing.SwingUtilities;
 
+import LearningTutorials.JavaSwingTutorials.Tutorial2.JFrameTwo;
+
 //JPanel is a simple container class
 //Space for a application to provide other components.
 //Has own layout manager that is seperate
@@ -14,6 +16,6 @@ public class JPanel {
                 JFrameTwo frame = new JFrameTwo();
 
             }
-        };);
+        });
     }
 }

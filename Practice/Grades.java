@@ -1,8 +1,5 @@
 package Practice;
 
-import java.util.ArrayList;
-
-import javax.swing.JList;
 import javax.swing.JOptionPane;
 
 public class Grades {
