@@ -13,9 +13,9 @@ public class JFrameDemo {
         //Run this program on the Event Dispatch Thread (EDT)
         SwingUtilities.invokeLater(new Runnable() {
             
-            @Override
+            
             public void run(){
-                JFrame1 frame1 = new JFrame1();
+                JFrameTwo frameTwo = new JFrameTwo();
             }
         });
     }

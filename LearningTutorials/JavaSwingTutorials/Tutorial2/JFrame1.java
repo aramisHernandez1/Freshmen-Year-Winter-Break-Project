@@ -12,6 +12,7 @@ public class JFrame1 extends JFrame {
         setTitle("JFrame1");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(500, 400);
+        setLocationRelativeTo(null);
         setVisible(true);
 
     }
