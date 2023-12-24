@@ -1,4 +1,4 @@
-package LearningTutorials.JavaSwingTutorials;
+package LearningTutorials.JavaSwingTutorials.Tutorial1;
 
 import javax.swing.SwingUtilities;
 
