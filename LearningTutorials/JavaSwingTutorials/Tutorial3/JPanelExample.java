@@ -8,7 +8,7 @@ import LearningTutorials.JavaSwingTutorials.Tutorial2.JFrameTwo;
 //Space for a application to provide other components.
 //Has own layout manager that is seperate
 
-public class JPanel {
+public class JPanelExample {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             @Override

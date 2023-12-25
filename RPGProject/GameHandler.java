@@ -1,6 +1,11 @@
 package RPGProject;
 
+import java.awt.Color;
+
 import javax.swing.JOptionPane;
+
+import RPGProject.GUI.BaseJFrame;
+import RPGProject.GUI.BasePanel;
 
 enum GameModes{
     PAUSED, PLAY
@@ -10,41 +15,20 @@ enum GameModes{
 public class GameHandler {
 
     private GameModes playMode;
+    private BaseJFrame mainFrame;
+    private BasePanel background;
 
     public GameHandler(){
+        initialize();
+    }
+
+    private void initialize(){
         this.playMode = GameModes.PAUSED;
+        mainFrame = new BaseJFrame();
+        background = new BasePanel();
 
+        mainFrame.addContainers(background.getPanel());
     }
-
-    public GameModes StartGame(boolean firstStart){
-        //Pause or first game start by the bool passed.
-        String message;
-        if(firstStart){
-            message = "Press Yes to start game.";
-        }
-        else{
-            message = "Press Yes to continue game.";
-        }
-
-
-        //Confirm window. 
-        int confirm = JOptionPane.showConfirmDialog(null, message);
-        if(confirm == 1){
-            return this.playMode = GameModes.PLAY;
-        }
-
-        else{
-            return this.playMode = GameModes.PAUSED;
-        }
-    }
-
-    public Player CharacterCreation(){
-        String name = JOptionPane.showInputDialog("What is your name?");
-        Player character = new Player(name);
-
-        return character;
-    }
-
 
     public GameModes getPlayMode(){
         return this.playMode;
