@@ -1,8 +1,10 @@
 package RPGProject.GUI;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.FlowLayout;
 
-import javax.swing.JPanel;
+import javax.swing.*;
 
 public class BasePanel {
     
@@ -15,7 +17,7 @@ public class BasePanel {
 
     private void initialize(){
         panel = new JPanel();
-        this.panel.setBounds(200, 200, 200, 200);
+        this.panel.setLayout(new FlowLayout(FlowLayout.CENTER, 15, 10));
         this.panel.setBackground(this.panelColor);
 
     }
@@ -26,5 +28,14 @@ public class BasePanel {
 
     public void ChangeColor(Color color){
         this.panel.setBackground(color);    
+    }
+
+    public void addContainers(JComponent container){
+        this.panel.add(container, BorderLayout.EAST);
+    }
+
+    public JButton addButton(JButton button){
+        this.panel.add(button);
+        return button;
     }
 }
