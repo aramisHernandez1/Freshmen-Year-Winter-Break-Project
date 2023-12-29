@@ -1,8 +1,5 @@
 package RPGProject.GUI;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.*;
 
 public class ListButtons{
@@ -14,7 +11,7 @@ public class ListButtons{
     }
     
     private void initialize(){
-        this.mainButton = new JButton("?");
+        mainButton = new JButton("?");
         this.mainButton.setBounds(200, 100, 200, 50);
     }
 

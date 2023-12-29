@@ -17,7 +17,7 @@ public class BasePanel {
 
     private void initialize(){
         panel = new JPanel();
-        this.panel.setLayout(new FlowLayout(FlowLayout.CENTER, 15, 10));
+        this.panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 10));
         this.panel.setBackground(this.panelColor);
 
     }
@@ -30,12 +30,12 @@ public class BasePanel {
         this.panel.setBackground(color);    
     }
 
-    public void addContainers(JComponent container){
-        this.panel.add(container, BorderLayout.EAST);
+    public void addComponent(JComponent container, FlowLayout location){
+        this.panel.add(container, location);
     }
 
     public JButton addButton(JButton button){
-        this.panel.add(button);
+        this.panel.add(button, new FlowLayout(FlowLayout.CENTER));
         return button;
     }
 }
