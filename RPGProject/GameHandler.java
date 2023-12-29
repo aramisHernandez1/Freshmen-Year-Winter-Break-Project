@@ -18,10 +18,6 @@ enum GameModes{
 public class GameHandler {
 
     private GameModes playMode;
-    private BaseJFrame mainFrame;
-    private BasePanel background;
-    private ListButtons forward;
-    private ListButtons backward;
 
     private MainFrame frame;
 
@@ -33,16 +29,7 @@ public class GameHandler {
         this.playMode = GameModes.PAUSED;
         this.frame = new MainFrame();
 
-        /*
-        mainFrame = new BaseJFrame();
-        background = new BasePanel();
-        forward = new ListButtons();
-        backward = new ListButtons();
 
-        mainFrame.addContainers(background.getPanel());
-        background.addButton(forward.getButton());
-        background.addButton(backward.getButton());
-        */
     }
 
     public GameModes getPlayMode(){
