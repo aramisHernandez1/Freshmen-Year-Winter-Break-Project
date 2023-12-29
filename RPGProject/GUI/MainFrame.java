@@ -2,17 +2,14 @@ package RPGProject.GUI;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 
 import javax.swing.*;
 
 public class MainFrame {
 
     private JFrame mainFrame;
-    private JPanel north;
-    private JPanel center;
-    private JPanel south;
-    private JPanel east;
-    private JPanel west;
+    private JPanel panel; 
 
     private BorderLayout borderLayout;
 
@@ -35,38 +32,14 @@ public class MainFrame {
 
         this.mainFrame.setLayout(borderLayout);
         this.mainFrame.setVisible(true);
-
-        initPanels();
-
-
-    }
+        
+        this.panel = new JPanel();
+        this.panel.setBackground(Color.gray);
 
 
-    private void initPanels(){
-        center = new JPanel();
-        center.setBackground(Color.green);
+        this.mainFrame.add(panel);
 
-        north = new JPanel();
-        north.setBackground(Color.blue);
 
-        south = new JPanel();
-        south.setBackground(Color.red);
-
-        east = new JPanel();
-        east.setBackground(Color.orange);
-
-        west = new JPanel();
-        west.setBackground(Color.gray);
-
-        addPanels();
-    }
-
-    private void addPanels(){
-        this.mainFrame.add(center, borderLayout.CENTER);
-        this.mainFrame.add(north, borderLayout.NORTH);
-        this.mainFrame.add(south, borderLayout.SOUTH);
-        this.mainFrame.add(east, borderLayout.EAST);
-        this.mainFrame.add(west, borderLayout.WEST);
     }
 
 }
