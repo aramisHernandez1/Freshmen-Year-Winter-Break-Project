@@ -1,11 +1,16 @@
 package RPGProject.GUI;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 
 import javax.swing.*;
+import javax.swing.text.JTextComponent.KeyBinding;
 
 public class PauseFrame {
 
@@ -34,9 +39,22 @@ public class PauseFrame {
         title.setAlignmentX(JLabel.CENTER_ALIGNMENT);
         pauseLabel.setAlignmentX(JLabel.CENTER_ALIGNMENT);
 
-
         this.pausePanel.add(title);
         this.pausePanel.add(pauseLabel);
+
+
+        JButton playButton = createButton("Play");
+        playButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                pauseframe.dispose();
+            }
+        });
+
+        playButton.setAlignmentX(JButton.CENTER_ALIGNMENT);
+
+        this.pausePanel.add(playButton);
         this.pauseframe.add(pausePanel);
 
         show(true);
@@ -50,6 +68,14 @@ public class PauseFrame {
 
 
         return label;
+    }
+
+    private JButton createButton(String text){
+        JButton button = new JButton(text);
+        button.setMnemonic(KeyEvent.VK_ENTER);
+        button.setFocusable(false);
+
+        return button;
     }
 
     public void show(boolean visible){
