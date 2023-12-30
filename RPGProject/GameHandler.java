@@ -1,9 +1,7 @@
 package RPGProject;
 
-import java.awt.Color;
-
-import javax.swing.JButton;
-import javax.swing.JOptionPane;
+import RPGProject.GUI.Mainframe;
+import RPGProject.GUI.PauseFrame;
 
 enum GameModes{
     PAUSED, PLAY
@@ -13,6 +11,8 @@ enum GameModes{
 public class GameHandler {
 
     private GameModes playMode;
+    private Mainframe mainframe;
+    private PauseFrame pauseFrame;
 
 
     public GameHandler(){
@@ -21,8 +21,7 @@ public class GameHandler {
 
     private void initialize(){
         this.playMode = GameModes.PAUSED;
-
-
+        this.pauseFrame = new PauseFrame();
 
     }
 
