@@ -43,18 +43,7 @@ public class PauseFrame {
         this.pausePanel.add(pauseLabel);
 
 
-        JButton playButton = createButton("Play");
-        playButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e)
-            {
-                pauseframe.dispose();
-            }
-        });
 
-        playButton.setAlignmentX(JButton.CENTER_ALIGNMENT);
-
-        this.pausePanel.add(playButton);
         this.pauseframe.add(pausePanel);
 
         show(true);
@@ -70,12 +59,22 @@ public class PauseFrame {
         return label;
     }
 
-    private JButton createButton(String text){
+    public JButton createButton(String text, Color textColor, Color backgroundColor){
         JButton button = new JButton(text);
+        button.setForeground(textColor);
+        button.setBackground(backgroundColor);
         button.setMnemonic(KeyEvent.VK_ENTER);
         button.setFocusable(false);
 
         return button;
+    }
+
+    public  JPanel getPanel(){
+        return pausePanel;
+    } 
+
+    public void exitWindow(){
+        this.pauseframe.dispose();
     }
 
     public void show(boolean visible){

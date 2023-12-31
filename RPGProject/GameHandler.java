@@ -1,5 +1,13 @@
 package RPGProject;
 
+import java.awt.Button;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JPanel;
+
 import RPGProject.GUI.Mainframe;
 import RPGProject.GUI.PauseFrame;
 
@@ -23,6 +31,21 @@ public class GameHandler {
         this.playMode = GameModes.PAUSED;
         this.pauseFrame = new PauseFrame();
 
+        JPanel pausePanel = this.pauseFrame.getPanel();
+        JButton playButton = this.pauseFrame.createButton("Play", Color.white, Color.black);
+
+        playButton.setAlignmentX(JButton.CENTER_ALIGNMENT);
+        pausePanel.add(playButton);
+        
+        playButton.addActionListener(new ActionListener() {
+            @Override
+            //Button Behavior
+            public void actionPerformed(ActionEvent e){
+                playMode = GameModes.PLAY;
+                pauseFrame.exitWindow();
+            }
+            
+        });
     }
 
     public GameModes getPlayMode(){
