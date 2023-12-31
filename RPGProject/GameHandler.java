@@ -43,9 +43,18 @@ public class GameHandler {
             public void actionPerformed(ActionEvent e){
                 playMode = GameModes.PLAY;
                 pauseFrame.exitWindow();
+                mainframe = new Mainframe();
+                gameStart();
             }
             
         });
+    }
+
+    public void gameStart(){
+        JButton rollbutton = mainframe.createButton("Roll", Color.green, Color.blue);
+        JPanel panel = mainframe.getConsolePanel();
+        panel.add(rollbutton);
+
     }
 
     public GameModes getPlayMode(){
