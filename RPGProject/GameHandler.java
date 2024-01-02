@@ -28,18 +28,22 @@ public class GameHandler {
     }
 
     private void initialize(){
+        //Pause menu
         this.playMode = GameModes.PAUSED;
         this.pauseFrame = new PauseFrame();
 
         JPanel pausePanel = this.pauseFrame.getPanel();
         JButton playButton = this.pauseFrame.createButton("Play", Color.white, Color.black);
 
+        
         playButton.setAlignmentX(JButton.CENTER_ALIGNMENT);
         pausePanel.add(playButton);
+
+        //Game started
         
         playButton.addActionListener(new ActionListener() {
             @Override
-            //Button Behavior
+            //Button Behavior and actual main menu for game
             public void actionPerformed(ActionEvent e){
                 playMode = GameModes.PLAY;
                 pauseFrame.exitWindow();
