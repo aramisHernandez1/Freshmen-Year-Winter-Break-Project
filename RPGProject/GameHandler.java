@@ -1,11 +1,11 @@
 package RPGProject;
 
-import java.awt.Button;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import RPGProject.GUI.Mainframe;
@@ -21,6 +21,7 @@ public class GameHandler {
     private GameModes playMode;
     private Mainframe mainframe;
     private PauseFrame pauseFrame;
+    private MovementHandler spaceHandler; 
 
 
     public GameHandler(){
@@ -28,6 +29,8 @@ public class GameHandler {
     }
 
     private void initialize(){
+        this.spaceHandler = new MovementHandler();
+
         //Pause menu
         this.playMode = GameModes.PAUSED;
         this.pauseFrame = new PauseFrame();
@@ -56,13 +59,22 @@ public class GameHandler {
 
     public void gameStart(){
         JButton rollbutton = mainframe.createButton("Roll", Color.green, Color.blue);
-        JPanel panel = mainframe.getConsolePanel();
-        panel.add(rollbutton);
+        JFrame frame = mainframe.getFrame();
+        frame.add(rollbutton);
+
+        
+
+        rollbutton.addActionListener(new ActionListener() { 
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Case curCase = spaceHandler.getCase();
+                System.out.println(curCase);
+            }
+        });
 
     }
 
     public GameModes getPlayMode(){
         return this.playMode;
     }
-
 }

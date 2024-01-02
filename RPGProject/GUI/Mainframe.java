@@ -36,7 +36,7 @@ public class Mainframe {
         
         this.consoleText = new JLabel();
         this.consoleText.setForeground(Color.green);
-        print("Game started");
+        print("Game started press Roll to start your adventure.");
 
         this.mainPanel.add(consoleText);
         this.frame.add(mainPanel, BorderLayout.SOUTH);
@@ -65,6 +65,10 @@ public class Mainframe {
 
     public JPanel getConsolePanel(){
         return this.mainPanel;
+    }
+
+    public JFrame getFrame(){
+        return this.frame;
     }
 
     public void show(boolean visible){
