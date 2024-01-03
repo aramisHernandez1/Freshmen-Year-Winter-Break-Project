@@ -17,7 +17,7 @@ public class MovementHandler {
     }
 
     private void initialize(){
-        rollCase();
+        currrentCase = Case.FREESPACE;
     }
 
     public void rollCase(){

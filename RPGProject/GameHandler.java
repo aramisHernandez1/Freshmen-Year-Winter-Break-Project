@@ -15,19 +15,50 @@ enum GameModes{
     PAUSED, PLAY
 }
 
-//Possibly could be static.
+
+
+
+
 public class GameHandler {
 
+
     private GameModes playMode;
+
+    //Frames and Graphics
     private Mainframe mainframe;
     private PauseFrame pauseFrame;
+
+    //TileHandler
     private MovementHandler spaceHandler; 
+
+    //Action Commands
+    private String playButtonCommand = "PLAY";
+    private String rollButtonCommand = "ROLL";
+
+
+    //Button Listener class for action commands
+    class ButtonActionListener implements ActionListener{
+    @Override
+    public void actionPerformed(ActionEvent e){
+        String actionComand = e.getActionCommand();
+        if(actionComand.equals(playButtonCommand)){
+            start();
+        }
+        else if(actionComand.equals(rollButtonCommand)){
+            Case curCase = spaceHandler.getCase();
+            roll(curCase);
+        }
+        }
+    }
+
+    private ButtonActionListener actionListener = new ButtonActionListener();
 
 
     public GameHandler(){
         initialize();
     }
 
+    //Sets up main pause menu and prepares the main console menu
     private void initialize(){
         this.spaceHandler = new MovementHandler();
 
@@ -42,36 +73,50 @@ public class GameHandler {
         playButton.setAlignmentX(JButton.CENTER_ALIGNMENT);
         pausePanel.add(playButton);
 
-        //Game started
-        
-        playButton.addActionListener(new ActionListener() {
-            @Override
-            //Button Behavior and actual main menu for game
-            public void actionPerformed(ActionEvent e){
-                playMode = GameModes.PLAY;
-                pauseFrame.exitWindow();
-                mainframe = new Mainframe();
-                gameStart();
-            }
-            
-        });
+        playButton.setActionCommand(playButtonCommand);
+        playButton.addActionListener(actionListener);
     }
 
-    public void gameStart(){
-        JButton rollbutton = mainframe.createButton("Roll", Color.green, Color.blue);
+    public void mainGameplay(){
+        JButton rollbutton = mainframe.createButton("Roll", Color.green, Color.gray);
+        rollbutton.setActionCommand(rollButtonCommand);
+        rollbutton.addActionListener(actionListener);
+
         JFrame frame = mainframe.getFrame();
         frame.add(rollbutton);
+    }
 
-        
+    //Action command method
+    private Case roll(Case tile){
+        if(tile.equals(Case.FREESPACE)){
+            int roll = spaceHandler.rollDice();
+            spaceHandler.freeSpaceMove(roll);
+            mainframe.print("You are on a free space. You rolled a " + roll + ". " + "You move " + roll + "Spaces.");
+            spaceHandler.rollCase();
+        }
+        else if(tile.equals(Case.ENEMY)){
+            int roll = spaceHandler.rollDice();
+            mainframe.print("You encounter an enemy.");
+            spaceHandler.rollCase();
+        }
+        else{
+            int roll = spaceHandler.rollDice();
+            mainframe.print("You found a chest!");
+            spaceHandler.rollCase();
+        }
 
-        rollbutton.addActionListener(new ActionListener() { 
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Case curCase = spaceHandler.getCase();
-                System.out.println(curCase);
-            }
-        });
 
+        tile = spaceHandler.getCase();
+        return tile;
+    }
+
+
+    //Pause menu action command method.
+    private void start(){
+        playMode = GameModes.PLAY;
+        pauseFrame.exitWindow();
+        mainframe = new Mainframe();
+        mainGameplay();
     }
 
     public GameModes getPlayMode(){
