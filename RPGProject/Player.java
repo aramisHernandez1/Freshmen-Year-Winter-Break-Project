@@ -3,10 +3,11 @@ public class Player{
     
     private String name;
     private int power = 1;
-    private double maxHealth = 100d;
-    private double health = maxHealth;
+    private int maxHealth = 100;
+    private int health = maxHealth;
     private double xp = 0d;
     private double maxXP = 100d;
+    public int gold = 0;
 
     public Player(String player_name){
         this.name = player_name;
@@ -41,11 +42,11 @@ public class Player{
 
 
     //#region Health Methods
-    public double GetMaxHealth(){
+    public int GetMaxHealth(){
         return this.maxHealth;
     }
 
-    public double GetCurrentHealth(){
+    public int GetCurrentHealth(){
         return this.health;
     }
 

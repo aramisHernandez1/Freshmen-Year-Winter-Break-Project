@@ -35,6 +35,7 @@ public class GameHandler {
     private String playButtonCommand = "PLAY";
     private String rollButtonCommand = "ROLL";
 
+    private Player player = new Player("Your name");
 
     //Button Listener class for action commands
     class ButtonActionListener implements ActionListener{
@@ -97,7 +98,7 @@ public class GameHandler {
         else if(tile.equals(Case.ENEMY)){
             int roll = spaceHandler.rollDice();
             mainframe.print("You encounter an enemy.");
-            spaceHandler.rollCase();
+            spaceHandler.EnemyEncount();
         }
         else{
             int roll = spaceHandler.rollDice();

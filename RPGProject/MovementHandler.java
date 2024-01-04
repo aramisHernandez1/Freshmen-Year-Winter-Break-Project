@@ -2,6 +2,8 @@ package RPGProject;
 
 import java.util.Random;
 
+import RPGProject.GUI.EnemyWindow;
+
 enum Case{
     ENEMY, CHEST, FREESPACE
 
@@ -32,6 +34,11 @@ public class MovementHandler {
             default:currrentCase = Case.FREESPACE;
                 break;
         }
+    }
+
+    public void EnemyEncount(){
+        EnemyWindow choice = new EnemyWindow(this);
+
     }
 
     public void freeSpaceMove(int space){        
